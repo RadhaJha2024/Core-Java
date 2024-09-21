@@ -11,7 +11,7 @@ public class ExceptionThrow {
      {
           j=18/i;
      
-     // EVEN IF CATCH IS NOT CALLED, I WANNA CALL IT 
+     // EVEN IF CATCH IS NOT CALL, I WANNA CALL IT 
         if(j==0)
         throw new ArithmeticException(" I dont want to print zero");
        System.out.println("thats the default O/P" );
