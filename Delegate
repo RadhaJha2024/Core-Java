@@ -1,0 +1,19 @@
+class MainPrinter { // class that hold the actual PrintData() method
+  void PrintData() {
+    System.out.println("This is the Delegate.");
+  }
+}
+
+class MyPrinter { // The class that calls PrintData() method from the object of class MainPrinter
+  MainPrinter p = new MainPrinter(); // Creating an object for MainPrinter class.
+  void PrintData() {
+    p.PrintData(); // Calling method from MainPrinter class object.
+  }
+}
+
+class TestDelegate {
+  public static void main(String[] args) {
+    MyPrinter printer = new MyPrinter(); // Creating an object for MyPrinter class.
+    printer.PrintData(); // Calling the method from MyPrinter class object.
+  }
+}
