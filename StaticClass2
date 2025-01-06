@@ -1,0 +1,32 @@
+// Utility class with static methods and fields
+public class MathHelper {
+
+    // A static constant (field)
+    public static final double PI = 3.14159;
+
+    // A static method for addition
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    // A static method to calculate the area of a circle
+    public static double circleArea(double radius) {
+        return PI * radius * radius;
+    }
+
+    // Private constructor to prevent instantiation
+    private MathHelper() {
+        // Prevent instantiation
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Accessing static methods and fields directly using the class name
+        int result = MathHelper.add(10, 20);
+        System.out.println("Addition: " + result);
+
+        double area = MathHelper.circleArea(5);
+        System.out.println("Circle Area: " + area);
+    }
+}
