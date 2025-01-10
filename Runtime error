@@ -1,0 +1,7 @@
+public class RuntimeErrorExample {
+    public static void main(String[] args) {
+        int number = 10;
+        int result = number / 0; // Division by zero
+        System.out.println("Result: " + result);
+    }
+}
