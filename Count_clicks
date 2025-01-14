@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+public class ClickTracker {
+    private int currentClicks;
+    private int maxClicks;
+
+    // Constructor to initialize click counters
+    public ClickTracker() {
+        this.currentClicks = 0;
+        this.maxClicks = 0;
+    }
+
+    // Method to simulate a click
+    public void click() {
+        currentClicks++;
+        if (currentClicks > maxClicks) {
+            maxClicks = currentClicks; // Update the maximum clicks
+        }
+        System.out.println("Click registered! Current clicks: " + currentClicks);
+    }
+
+    // Method to reset the click counter
+    public void resetClicks() {
+        currentClicks = 0;
+        System.out.println("Clicks have been reset!");
+    }
+
+    // Method to display the maximum clicks
+    public void displayMaxClicks() {
+        System.out.println("Maximum number of clicks recorded: " + maxClicks);
+    }
+
+    public static void main(String[] args) {
+        ClickTracker clickTracker = new ClickTracker();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Website Click Tracker");
+        System.out.println("1: Click");
+        System.out.println("2: Reset Clicks");
+        System.out.println("3: Show Maximum Clicks");
+        System.out.println("4: Exit");
+
+        while (true) {
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    clickTracker.click();
+                    break;
+                case 2:
+                    clickTracker.resetClicks();
+                    break;
+                case 3:
+                    clickTracker.displayMaxClicks();
+                    break;
+                case 4:
+                    System.out.println("Exiting program. Goodbye!");
+                    scanner.close();
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+}
