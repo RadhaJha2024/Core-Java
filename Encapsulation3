@@ -1,0 +1,74 @@
+class BankAccount {
+    // Private fields (data hiding)
+    private String accountNumber;
+    private String accountHolderName;
+    private double balance;
+
+    // Constructor to initialize account details
+    public BankAccount(String accountNumber, String accountHolderName, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.accountHolderName = accountHolderName;
+        if (initialBalance >= 0) {
+            this.balance = initialBalance;
+        } else {
+            System.out.println("Initial balance cannot be negative. Setting balance to 0.");
+            this.balance = 0;
+        }
+    }
+
+    // Getter for account number
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    // Getter for account holder name
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
+
+    // Getter for balance
+    public double getBalance() {
+        return balance;
+    }
+
+    // Method to deposit money
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: $" + amount + ". Current balance: $" + balance);
+        } else {
+            System.out.println("Deposit amount must be positive.");
+        }
+    }
+
+    // Method to withdraw money
+    public void withdraw(double amount) {
+        if (amount > 0) {
+            if (amount <= balance) {
+                balance -= amount;
+                System.out.println("Withdrawn: $" + amount + ". Current balance: $" + balance);
+            } else {
+                System.out.println("Insufficient balance. Current balance: $" + balance);
+            }
+        } else {
+            System.out.println("Withdrawal amount must be positive.");
+        }
+    }
+}
+
+public class BankAccountExample {
+    public static void main(String[] args) {
+        // Create a new bank account
+        BankAccount account = new BankAccount("1234567890", "Alice Johnson", 500.0);
+
+        // Access details using getters
+        System.out.println("Account Holder: " + account.getAccountHolderName());
+        System.out.println("Account Number: " + account.getAccountNumber());
+        System.out.println("Initial Balance: $" + account.getBalance());
+
+        // Perform transactions
+        account.deposit(200.0);    // Deposit money
+        account.withdraw(100.0);  // Withdraw money
+        account.withdraw(700.0);  // Attempt to withdraw more than the balance
+    }
+}
