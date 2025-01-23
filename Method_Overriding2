@@ -1,0 +1,12 @@
+public class Animal {
+  public void voice() {
+    System.out.println("Speak!");
+  }
+}
+
+public class Cat extends Animal {
+  @Override
+  public void voice() {
+    System.out.println("Meow!");
+  }
+}
