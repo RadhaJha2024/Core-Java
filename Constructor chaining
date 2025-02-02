@@ -1,0 +1,34 @@
+// Parent class
+class Parent {
+    Parent() {
+        System.out.println("Parent class default constructor");
+    }
+
+    Parent(String msg) {
+        System.out.println("Parent class constructor: " + msg);
+    }
+}
+
+// Child class
+class Child extends Parent {
+    Child() {
+        super("Called from Child");
+        System.out.println("Child class default constructor");
+    }
+
+    Child(String msg) {
+        super(msg); // Calls the Parent class constructor with a parameter
+        System.out.println("Child class constructor: " + msg);
+    }
+}
+
+// Main class to test the constructor chaining
+public class ConstructorOverridingExample {
+    public static void main(String[] args) {
+        System.out.println("Creating Child object with default constructor:");
+        Child obj1 = new Child(); 
+        
+        System.out.println("\nCreating Child object with parameterized constructor:");
+        Child obj2 = new Child("Hello from Child!");
+    }
+}
